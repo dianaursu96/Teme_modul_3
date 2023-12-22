@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myTeacher"
+          class="JavaTeacher">
+        <constructor-arg ref="myWisdomService" />
+        <constructor-arg ref="myHomeworkService" />
+        <property name="age" value="27" />
+        <property name="workPlace" value="DevMind" />
+    </bean>
+    <bean id="myMathTeacher"
+          class="MathTeacher">
+        <property name="wisdomService" ref="myWisdomService" />
+    </bean>
+    <bean id="myWisdomService"
+          class="WisdomWordsService">
+    </bean>
+    <bean id="myHomeworkService"
+          class="HomeworkService">
+    </bean>
+</beans>
